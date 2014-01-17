@@ -1323,6 +1323,14 @@ public class SettingsActivity extends Activity
                     boolean hasDeviceKeys = getResources().getInteger(
                             com.android.internal.R.integer.config_deviceHardwareKeys) != 0;
                     if (!hasDeviceKeys) {
+                } else if (id == R.id.supersu_settings) {
+                    // Embedding into Settings is supported from SuperSU v1.85 and up
+                    boolean supported = false;
+                    try {
+                        supported = (getPackageManager().getPackageInfo("eu.chainfire.supersu", 0).versionCode >= 185);
+                    } catch (PackageManager.NameNotFoundException e) {
+                    }
+                    if (!supported) {
                         removeTile = true;
                     }
                 }
