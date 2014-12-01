@@ -32,4 +32,8 @@
     <string name="header_category_intense">Customizations</string>
     <string name="intense_settings_title">Intense Tweaks</string>
 
+    <!-- About device screen, CPU and RAM info. -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">RAM</string>
+
 </resources>
