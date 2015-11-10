@@ -876,4 +876,9 @@
     <string name="category_misc">Miscellaneous</string>
     <string name="title_general">General</string>
     <string name="advanced">Advanced</string>
+
+    <!-- IntenseOS ChangeLog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="changelog_error">Unable to load changelog</string>
 </resources>
