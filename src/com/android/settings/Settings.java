@@ -125,5 +125,4 @@ public class Settings extends SettingsActivity {
     public static class AnonymousStatsActivity extends Settings { /* empty */ }
     public static class SoundSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LockScreenSettingsActivity extends SettingsActivity { /* empty */ }
-    public static class ChangeLog extends SettingsActivity { /* empty */ }
 }
