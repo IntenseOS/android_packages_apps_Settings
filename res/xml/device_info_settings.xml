@@ -32,12 +32,6 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
 
-        <!-- Change Log -->
-        <PreferenceScreen android:key="changelog"
-                android:title="@string/changelog_title"
-                android:summary="@string/changelog_title_summary"
-                android:fragment="com.android.settings.vibhu0009.ChangeLog" />
-
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
@@ -79,7 +73,13 @@
                 android:title="@string/device_feedback">
         </PreferenceScreen>
 
-        <!-- Device hardware model -->
+	<!-- Changelog -->
+        <PreferenceScreen 
+         	android:key="translator"
+         	android:title="@string/changelog_intense_title"
+         	android:fragment="com.android.settings.slim.Changelog" />        
+
+	<!-- Device hardware model -->
         <Preference android:key="device_model"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/model_name"
@@ -125,6 +125,18 @@
         <Preference android:key="kernel_version"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/kernel_version"
+                android:summary="@string/device_info_default"/>
+
+        <!-- Device cpu info -->
+        <Preference android:key="device_cpu"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/cpu_info"
+                android:summary="@string/device_info_default"/>
+
+        <!-- Device mem info -->
+        <Preference android:key="device_memory"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
         <!-- Build date -->
