@@ -32,6 +32,12 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
 
+        <!-- Changelog -->
+        <PreferenceScreen 
+         	android:key="translator"
+         	android:title="@string/changelog_intense_title"
+         	android:fragment="com.android.settings.slim.Changelog" />
+
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
                 android:title="@string/device_status"
@@ -73,12 +79,6 @@
                 android:title="@string/device_feedback">
         </PreferenceScreen>
 
-	<!-- Changelog -->
-        <PreferenceScreen 
-         	android:key="translator"
-         	android:title="@string/changelog_intense_title"
-         	android:fragment="com.android.settings.slim.Changelog" />        
-
 	<!-- Device hardware model -->
         <Preference android:key="device_model"
                 style="?android:preferenceInformationStyle"
@@ -97,6 +97,12 @@
                 android:title="@string/intense_version"
                 android:summary="@string/intense_version_default" />
 
+        <!-- Build date -->
+        <Preference android:key="build_date"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/build_date"
+                android:summary="@string/build_date_default" />
+
         <!-- CyanogenMod API Version -->
         <Preference android:key="mod_api_level"
                 style="?android:preferenceInformationStyle"
@@ -107,6 +113,18 @@
         <Preference android:key="security_patch"
                 style="?android:preferenceInformationStyle"
                 android:title="@string/security_patch"
+                android:summary="@string/device_info_default"/>
+
+        <!-- Device cpu info -->
+        <Preference android:key="device_cpu"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/cpu_info"
+                android:summary="@string/device_info_default"/>
+
+        <!-- Device mem info -->
+        <Preference android:key="device_memory"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/mem_info"
                 android:summary="@string/device_info_default"/>
 
         <!-- Device FCC equipment id -->
@@ -126,24 +144,6 @@
                 style="?android:preferenceInformationStyle"
                 android:title="@string/kernel_version"
                 android:summary="@string/device_info_default"/>
-
-        <!-- Device cpu info -->
-        <Preference android:key="device_cpu"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/cpu_info"
-                android:summary="@string/device_info_default"/>
-
-        <!-- Device mem info -->
-        <Preference android:key="device_memory"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/mem_info"
-                android:summary="@string/device_info_default"/>
-
-        <!-- Build date -->
-        <Preference android:key="build_date"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/build_date"
-                android:summary="@string/build_date_default" />
 
         <!-- Detailed build version -->
         <Preference android:key="build_number"
