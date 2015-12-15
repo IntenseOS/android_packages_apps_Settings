@@ -28,4 +28,7 @@
   <string name="cpu_info">CPU</string>
   <string name="mem_info">RAM</string>
 
+  <!-- SuperSU -->
+  <string name="supersu_title">SuperSU</string>
+
 </resources>
