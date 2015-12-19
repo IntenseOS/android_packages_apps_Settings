@@ -31,4 +31,7 @@
   <!-- SuperSU -->
   <string name="supersu_title">SuperSU</string>
 
+  <!-- IntenseOS Tweaks -->
+  <string name="intense_settings_title">Intense tweaks</string>
+
 </resources>

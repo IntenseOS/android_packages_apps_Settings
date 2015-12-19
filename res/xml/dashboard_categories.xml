@@ -99,6 +99,14 @@
             android:key="@string/category_key_device"
             android:title="@string/header_category_device" >
 
+        <!-- IntenseOS tweaks -->
+        <dashboard-tile
+                android:id="@+id/intense_settings"
+                android:title="@string/intense_settings_title"
+                android:fragment="com.android.settings.intense.IntenseSettings"
+                android:icon="@drawable/ic_settings_system"
+                />
+
         <!-- Sound -->
         <dashboard-tile
                 android:id="@+id/sound_settings"
