@@ -371,7 +371,7 @@ public class SettingsActivity extends Activity
             com.android.settings.cyanogenmod.DisplayRotation.class.getName(),
             com.android.settings.cyanogenmod.PrivacySettings.class.getName(),
             BlacklistSettings.class.getName(),
-            ProfilesSettings.class.getName()
+            ProfilesSettings.class.getName(),
             NotificationManagerSettings.class.getName()
     };
 
@@ -1347,6 +1347,7 @@ public class SettingsActivity extends Activity
             }
         }
         addExternalTiles(target);
+        }
     }
 
     private void addExternalTiles(List<DashboardCategory> target) {
