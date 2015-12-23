@@ -1345,6 +1345,7 @@ public class SettingsActivity extends Activity
             }
         }
         addExternalTiles(target);
+        }
     }
 
     private void addExternalTiles(List<DashboardCategory> target) {
