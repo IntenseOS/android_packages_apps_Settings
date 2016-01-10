@@ -15,16 +15,21 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <!-- About phone screen, IntenseOS version -->
-  <string name="intense_version">IntenseOS version</string>
-  <string name="intense_version_default">Unknown</string>
 
-  <!-- IntenseOS ChangeLog -->
-  <string name="changelog_title">Changelog</string>
-  <string name="changelog_title_summary">View recent changes in ROM</string>
-  <string name="changelog_error">Unable to load changelog</string>
+    <!-- About phone screen, IntenseOS version -->
+    <string name="intense_version">Intense-OS version</string>
+    <string name="intense_version_default">Unknown</string>
 
-  <!-- SuperSU -->
-  <string name="supersu_title">SuperSU</string>
+    <!-- IntenseOS ChangeLog -->
+    <string name="changelog_title">Changelog</string>
+    <string name="changelog_title_summary">View recent changes in ROM</string>
+    <string name="changelog_error">Unable to load changelog</string>
+
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
+
+    <!-- IntenseOS Tweaks -->
+    <string name="header_category_intense">Customizations</string>
+    <string name="intense_settings_title">Intense Tweaks</string>
 
 </resources>
