@@ -35,7 +35,6 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.text.Spannable;
 import android.text.style.TextAppearanceSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -62,6 +61,8 @@ import com.android.settingslib.bluetooth.BluetoothDeviceFilter;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 import com.android.settingslib.bluetooth.LocalBluetoothManager;
 
+import cyanogenmod.providers.CMSettings;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -76,6 +77,7 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
     private static final int MENU_ID_SCAN = Menu.FIRST;
     private static final int MENU_ID_RENAME_DEVICE = Menu.FIRST + 1;
     private static final int MENU_ID_SHOW_RECEIVED = Menu.FIRST + 2;
+    private static final int MENU_ID_ACCEPT_ALL_FILES = Menu.FIRST + 3;
 
     /* Private intent to show the list of received files */
     private static final String BTOPP_ACTION_OPEN_RECEIVED_FILES =
@@ -143,7 +145,6 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
 
         mEmptyView = (TextView) getView().findViewById(android.R.id.empty);
         getListView().setEmptyView(mEmptyView);
-        mEmptyView.setGravity(Gravity.START | Gravity.CENTER_VERTICAL);
 
         final SettingsActivity activity = (SettingsActivity) getActivity();
         mSwitchBar = activity.getSwitchBar();
@@ -272,6 +273,10 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
         boolean isDiscovering = mLocalAdapter.isDiscovering();
         int textId = isDiscovering ? R.string.bluetooth_searching_for_devices :
             R.string.bluetooth_search_for_devices;
+
+        boolean isAcceptAllFilesEnabled = CMSettings.System.getInt(getContentResolver(),
+                CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES, 0) == 1;
+
         menu.add(Menu.NONE, MENU_ID_SCAN, 0, textId)
                 .setEnabled(bluetoothIsEnabled && !isDiscovering)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
@@ -279,6 +284,10 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
                 .setEnabled(bluetoothIsEnabled)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         menu.add(Menu.NONE, MENU_ID_SHOW_RECEIVED, 0, R.string.bluetooth_show_received_files)
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
+        menu.add(Menu.NONE, MENU_ID_ACCEPT_ALL_FILES, 0, R.string.bluetooth_accept_all_files)
+                .setCheckable(true)
+                .setChecked(isAcceptAllFilesEnabled)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -303,6 +312,13 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
                 MetricsLogger.action(getActivity(), MetricsLogger.ACTION_BLUETOOTH_FILES);
                 Intent intent = new Intent(BTOPP_ACTION_OPEN_RECEIVED_FILES);
                 getActivity().sendBroadcast(intent);
+                return true;
+
+            case MENU_ID_ACCEPT_ALL_FILES:
+                item.setChecked(!item.isChecked());
+                CMSettings.System.putInt(getContentResolver(),
+                        CMSettings.System.BLUETOOTH_ACCEPT_ALL_FILES,
+                        item.isChecked() ? 1 : 0);
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -477,10 +493,6 @@ public final class BluetoothSettings extends DeviceListPreferenceFragment implem
             });
         }
         getPreferenceScreen().removeAll();
-        Spannable boldSpan = (Spannable) mEmptyView.getText();
-        boldSpan.setSpan(
-                new TextAppearanceSpan(getActivity(), android.R.style.TextAppearance_Medium), 0,
-                briefText.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
     @Override

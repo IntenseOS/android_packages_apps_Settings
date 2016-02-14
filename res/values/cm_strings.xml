@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2012-2015 The CyanogenMod Project
+     Copyright (C) 2012-2016 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -236,17 +236,6 @@
     <string name="duplicate_appgroup_name">Duplicate app group name!</string>
     <string name="profile_app_delete_confirm">Remove this app?</string>
 
-    <!-- Profile Settings sound modes labels -->
-    <string name="sound_mode">Notification mode</string>
-    <string name="ringer_mode">Ring mode</string>
-    <string name="lights_mode">Lights mode</string>
-    <string name="vibrate_mode">Vibrate mode</string>
-    <string name="choose_soundtone">Choose notification tone</string>
-    <string name="choose_ringtone">Choose ringtone</string>
-    <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
-    <string name="soundtone_title">Notification tone</string>
-    <string name="soundtone_summary" translatable="false">""</string>
-
     <string name="no_bluetooth_triggers">No Bluetooth devices paired.\nTap to pair Bluetooth device before configuring triggers.</string>
     <string name="no_wifi_triggers">No Wi\u2011Fi access points configured.\nTap to connect Wi\u2011Fi before configuring triggers.</string>
     <string name="no_triggers_configured">No triggers configured. Tap to add more.</string>
@@ -311,6 +300,7 @@
     <string name="notification_light_screen_on">Lights with screen on</string>
     <string name="notification_light_use_multiple_leds">Multiple LEDs</string>
     <string name="keywords_lights_brightness_level">dim leds brightness</string>
+    <string name="notification_light_automagic">Choose colors automatically</string>
 
     <!-- Lights settings, LED notification -->
     <string name="led_notification_title">Light settings</string>
@@ -408,7 +398,7 @@
     <string name="app_ops_summaries_toggle_bluetooth">toggle bluetooth</string>
     <string name="app_ops_summaries_start_at_boot">start at boot</string>
     <string name="app_ops_summaries_toggle_nfc">toggle NFC</string>
-    <string name="app_ops_summaries_toggle_mobile_data">toggle mobile data</string>
+    <string name="app_ops_summaries_toggle_mobile_data">toggle cellular data</string>
     <string name="app_ops_summaries_superuser">root access</string>
 
     <!-- User display names for app ops codes - extension of AOSP -->
@@ -479,7 +469,7 @@
     <string name="app_ops_labels_toggle_bluetooth">Toggle bluetooth</string>
     <string name="app_ops_labels_start_at_boot">Start at boot</string>
     <string name="app_ops_labels_toggle_nfc">Toggle NFC</string>
-    <string name="app_ops_labels_toggle_mobile_data">Toggle mobile data</string>
+    <string name="app_ops_labels_toggle_mobile_data">Toggle cellular data</string>
     <string name="app_ops_labels_superuser">Root access</string>
 
     <!-- App ops permissions -->
@@ -579,7 +569,6 @@
     <string name="power_menu_title">Power menu</string>
     <string name="power_menu_reboot_title">Reboot menu</string>
     <string name="power_menu_screenshot_title">Screenshot</string>
-    <string name="power_menu_profiles_title">Profile switcher</string>
     <string name="power_menu_airplane_title">Airplane mode</string>
     <string name="power_menu_users_title">User switcher</string>
     <string name="power_menu_settings_title">Settings shortcut</string>
@@ -587,7 +576,6 @@
     <string name="power_menu_bug_report_title">Bug report</string>
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
-    <string name="power_menu_profiles_disabled">System profiles are disabled</string>
 
     <!-- Buttons - Enable navbar -->
     <string name="disable_navkeys_title">Enable on-screen nav bar</string>
@@ -706,6 +694,9 @@
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
 
+    <!-- Bluetooth settings.  A checkbox to set if we should accept all the file types regardless of their presence in MIME type whitelist -->
+    <string name="bluetooth_accept_all_files">Accept all file types</string>
+
     <!-- High touch sensitivity -->
     <string name="high_touch_sensitivity_title">High touch sensitivity</string>
     <string name="high_touch_sensitivity_summary">Increase touchscreen sensitivity so it can be used while wearing gloves</string>
@@ -788,7 +779,12 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display the number of pending notifications</string>
     <string name="status_bar_quick_qs_pulldown_title">Quick pulldown</string>
-    <string name="status_bar_quick_qs_pulldown_summary">Right edge of the status bar pulls down Quick Settings</string>
+    <string name="status_bar_quick_qs_pulldown_summary">%1$s edge of the status bar pulls down Quick Settings</string>
+    <string name="status_bar_quick_qs_pulldown_summary_left">Left</string>
+    <string name="status_bar_quick_qs_pulldown_summary_right">Right</string>
+    <string name="status_bar_quick_qs_pulldown_off">Off</string>
+    <string name="status_bar_quick_qs_pulldown_left">Left</string>
+    <string name="status_bar_quick_qs_pulldown_right">Right</string>
 
     <!-- Status bar - Clock -->
     <string name="status_bar_clock_style_title">Clock style</string>
@@ -858,9 +854,20 @@
     <string name="lockpattern_settings_enable_error_path_title">Show pattern error</string>
     <!-- Whether the dots will be drawn when using the lockscreen pattern -->
     <string name="lockpattern_settings_enable_dots_title">Show pattern dots</string>
+    <!-- Whether the keyguard will directly pass to password entry -->
+    <string name="lock_directly_show_password">Directly show password entry</string>
+    <!-- Whether the keyguard will directly pass to pattern view -->
+    <string name="lock_directly_show_pattern">Directly show pattern view</string>
+    <!-- Whether the keyguard will directly pass to PIN entry -->
+    <string name="lock_directly_show_pin">Directly show PIN entry</string>
 
     <!-- lock screen visualizer -->
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
+
+    <!-- lock screen disabled by QS tile warning -->
+    <string name="lockscreen_disabled_by_qs_tile_title">Disabled by quick settings tile</string>
+    <string name="lockscreen_disabled_by_qs_tile_summary">Tap to enable the lock screen</string>
+    <string name="lockscreen_disabled_by_qs_tile_summary_enabled">Lock screen enabled!</string>
 
     <!-- Battery saver -->
     <string name="battery_saver_threshold">Battery saver threshold</string>
@@ -871,6 +878,9 @@
     <string name="autoperf_title">Enable per-app profiles</string>
     <string name="autoperf_summary">Automatically choose an appropriate battery mode for various apps</string>
     <string name="perf_profile_title">Battery mode</string>
+
+    <!-- Memory -->
+    <string name="memory_startup_apps_title">Apps started on boot</string>
 
     <!-- Sound & notification > Sound section: Title for the option defining the default notification ringtone. [CHAR LIMIT=30] -->
     <string name="notification_ringtone_title_cm">Notification tone</string>
@@ -905,6 +915,7 @@
     <string name="voice_wakeup_retrain_title">Retrain your voice</string>
     <string name="voice_wakeup_activity_title">Activity to launch</string>
     <string name="voice_wakeup_default_activity">Google Now</string>
+    <string name="voice_wakeup_needs_dial_permission_warning">Voice Wakeup needs to have phone call permissions to select a Direct Dial contact.</string>
 
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
@@ -984,6 +995,7 @@
     <string name="menu_hidden_apps_delete">Reset</string>
     <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
     <string name="protected_apps">Protected apps</string>
+    <string name="protected_apps_summary">Manage which applications are hidden behind a secure lock</string>
     <string name="saving_protected_components">Saving component state\u2026</string>
 
     <string name="pa_login_username_hint">Username (email)</string>
@@ -991,6 +1003,7 @@
     <string name="pa_login_submit_button">Sign in</string>
     <string name="pa_login_checking_password">Checking account\u2026</string>
     <string name="pa_login_incorrect_login">Login was incorrect</string>
+    <string name="pa_pattern_or_fingerprint_header">Must draw pattern or use fingerprint to unlock</string>
 
     <string name="category_sounds">Sounds</string>
     <string name="notification_manager">Notifications</string>
@@ -1037,18 +1050,22 @@
     <string name="inches">Inches</string>
 
     <string name="link_volume_option_title">Link ringtone &amp; notification volumes</string>
-    <string name="lcd_density_prompt_message">Some apps may not function at non-standard dpi.\n\nThis will restart your phone.</string>
+    <string name="lcd_density_prompt_message">Some apps may not function at non-standard DPI.\n\nThis will restart your device.</string>
 
     <!-- Edit access point labels: PPP number -->
     <string name="apn_ppp_number">APN PPP phone number</string>
     <string name="ppp_number" translatable="false">ppp_number</string>
+
+    <!-- APNs screen message indicating new APN user is adding is a duplicate -->
+    <string name="duplicate_apn_error_title">Duplicate APN</string>
+    <string name="duplicate_apn_error_message">This APN already exists. Discard or change parameters.</string>
 
     <string name="sim_enabler_summary"><xliff:g id="displayName">%1$s</xliff:g> is <xliff:g id="status" example="disabled">%2$s</xliff:g></string>
     <string name="sim_disabled">disabled</string>
     <string name="sim_missing">missing or faulty</string>
     <string name="sim_enabler_need_disable_sim">SIM card will be deactivated. Do you want to continue?</string>
     <string name="sim_enabler_will_disable_sim_title">Attention</string>
-    <string name="sim_enabler_need_switch_data_service">Will disable it and switch to SIM <xliff:g id="slotid">%1$s</xliff:g> for data services, are you sure?</string>
+    <string name="sim_enabler_need_switch_data_service">This SIM will be disabled and SIM <xliff:g id="slotid">%1$s</xliff:g> will be used for data services. Are you sure you want to continue?</string>
     <string name="sim_enabler_airplane_on">Unable to perform the operation while airplane mode is on.</string>
     <string name="sim_enabler_in_call">Unable to perform the operation while in call.</string>
     <string name="sim_enabler_both_inactive">Can\'t disable all SIM cards</string>
@@ -1066,7 +1083,7 @@
     <string name="sim_card_status_title">SIM %d status</string>
     <string name="sim_card_lock_settings_title">SIM %d lock settings</string>
     <string name="sim_card_summary_empty">SIM not inserted</string>
-    <string name="sim_mobile_network_settings_category_title">Mobile network settings</string>
+    <string name="sim_mobile_network_settings_category_title">Cellular network settings</string>
     <string name="sim_mobile_network_settings_title">SIM %d settings</string>
 
     <!-- Zen mode allowed event setting summary items -->
@@ -1078,4 +1095,62 @@
     <string name="zen_mode_summary_selected_callers">selected callers</string>
     <!-- [CHAR LIMIT=50] Like zen_mode_summary_selected_messages, but part of a list, so lower case if needed -->
     <string name="zen_mode_summary_selected_messages">selected messages</string>
+
+    <!-- About phone settings screen, setting option dialog title to show regulatory information [CHAR LIMIT=25] -->
+    <string name="regulatory_information_dialog_title" translatable="false">@string/regulatory_information</string>
+
+    <!-- SAR information -->
+    <string name="maximum_head_level">Head: %1$s W/kg</string>
+    <string name="maximum_body_level">Body: %1$s W/kg</string>
+
+    <!-- IC Codes -->
+    <string name="ic_code_model">Model: %1$s</string>
+    <string name="ic_code_full">IC: %1$s</string>
+
+    <string name="sim_ringtone_title">SIM %d ringtone</string>
+
+    <!-- label for application name -->
+    <string name="app_name_label_cm">App:</string>
+    <!-- label for last time used -->
+    <string name="last_time_used_label_cm">Last time used:</string>
+    <!-- label for usage time -->
+    <string name="usage_time_label_cm">Usage time:</string>
+
+    <!-- SD card & phone storage settings screen, message on screen after user selects Factory data reset [CHAR LIMIT=NONE] -->
+    <string name="master_clear_desc_cm" product="tablet">This will erase all data from your tablet\'s <b>internal storage</b>, including:\n\n<li>Your device accounts</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
+    <!-- SD card & phone storage settings screen, message on screen after user selects Factory data reset [CHAR LIMIT=NONE] -->
+    <string name="master_clear_desc_cm" product="default">This will erase all data from your phone\'s <b>internal storage</b>, including:\n\n<li>Your device accounts</li>\n<li>System and app data and settings</li>\n<li>Downloaded apps</li></string>
+
+    <!-- Factory reset strings -->
+    <string name="factory_reset_instructions_title">Personal data &amp; apps</string>
+    <string name="factory_reset_instructions_summary">This will erase all your accounts, apps, app data, and system settings on this device</string>
+    <string name="factory_reset_personal_content">Personal content</string>
+    <string name="factory_reset_erase_stored_content">Erase stored content</string>
+    <string name="factory_reset_erase_stored_content_summary">Erase music, photos, videos, and other user data stored on this device</string>
+    <string name="factory_reset_erase_stored_content_summary_forced">Erase music, photos, videos, and other user data stored on this device. \n\n<b>Content cannot be saved due to device encryption.</b></string>
+    <string name="factory_reset_erase_sd_card">Format SD card</string>
+    <string name="factory_reset_erase_sd_card_summary">Erase all data on the SD card, including music and photos</string>
+    <string name="factory_reset_warning_text_reset_now">RESET NOW</string>
+    <string name="factory_reset_warning_text_message">All your accounts, apps, app data, and system settings will be removed from this device. This cannot be reversed.</string>
+
+    <!-- Tethering & portable hotspot other category -->
+    <string name="tethering_other_category_text">Other</string>
+    <!-- Wi-Fi tethering inactivity timeout -->
+    <string name="hotstpot_inactivity_timeout_text">Wi\u2011Fi hotspot timeout</string>
+    <string name="hotstpot_inactivity_timeout_never">Never</string>
+    <string name="hotstpot_inactivity_timeout_1_minute">1 minute</string>
+    <string name="hotstpot_inactivity_timeout_5_minutes">5 minutes</string>
+    <string name="hotstpot_inactivity_timeout_10_minutes">10 minutes</string>
+    <string name="hotstpot_inactivity_timeout_never_summary_text">Portable Wi\u2011Fi hotspot will never timeout</string>
+    <string name="hotstpot_inactivity_timeout_summary_text">Portable Wi\u2011Fi hotspot will timeout after <xliff:g id="timeout">%1$s</xliff:g></string>
+
+    <!-- Live lock screen -->
+    <!-- Live lock screen title -->
+    <string name="live_lock_screen_title">Live lock screen</string>
+    <!-- Live lock screen summary -->
+    <string name="live_lock_screen_summary">Enable and configure Live lock screens</string>
+    <!-- Live lock screen settings content description -->
+    <string name="live_lock_screen_settings_button">Settings</string>
+    <!-- Live lock screen settings screen, caption for when live lock screens are disabled -->
+    <string name="live_lock_screen_settings_disabled_prompt">To view available Live lock screens, turn Live lock screens on.</string>
 </resources>

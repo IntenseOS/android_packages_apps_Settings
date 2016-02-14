@@ -154,6 +154,12 @@
         <item>@string/profile_action_disable</item>
     </string-array>
 
+    <string-array name="profile_notification_light_entries" translatable="false">
+        <item>@string/profile_action_none</item>
+        <item>@string/profile_action_enable</item>
+        <item>@string/profile_action_disable</item>
+    </string-array>
+
     <!-- Profile mode options. -->
      <string-array name="profile_entries" translatable="false">
          <item>@string/profile_entries_on</item>
@@ -402,10 +408,10 @@
         <item>power</item>
         <item>reboot</item>
         <item>screenshot</item>
-        <item>profile</item>
         <item>airplane</item>
         <item>users</item>
         <item>bugreport</item>
+        <item>silent</item>
     </string-array>
 
     <!-- Gamma calibration descriptors, deliberately empty as string values populated via
@@ -593,6 +599,34 @@
         <item>SG</item>
         <item>BR</item>
         <item>IN</item>
+    </string-array>
+
+    <!-- Quick pulldown -->
+    <string-array name="status_bar_quick_qs_pulldown_entries" translatable="false">
+        <item>@string/status_bar_quick_qs_pulldown_off</item>
+        <item>@string/status_bar_quick_qs_pulldown_right</item>
+        <item>@string/status_bar_quick_qs_pulldown_left</item>
+    </string-array>
+
+    <string-array name="status_bar_quick_qs_pulldown_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <!-- Wi-Fi tethering inactivity shut off -->
+    <string-array name="hotstpot_inactivity_timeout_entries" translatable="false">
+        <item>@string/hotstpot_inactivity_timeout_never</item>
+        <item>@string/hotstpot_inactivity_timeout_1_minute</item>
+        <item>@string/hotstpot_inactivity_timeout_5_minutes</item>
+        <item>@string/hotstpot_inactivity_timeout_10_minutes</item>
+    </string-array>
+
+    <string-array name="hotstpot_inactivity_timeout_values" translatable="false">
+        <item>0</item>
+        <item>60000</item>
+        <item>300000</item>
+        <item>600000</item>
     </string-array>
 
 </resources>

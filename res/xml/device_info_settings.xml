@@ -31,6 +31,7 @@
                 android:summary="@string/intenseextrainfo_summary">
                 <intent android:action="android.intent.action.MAIN"
                         android:targetPackage="com.android.settings" android:targetClass="com.android.settings.intense.extrainfo.MainActivity" />
+
         </PreferenceScreen>
 
         <!-- Device status - launches activity -->
